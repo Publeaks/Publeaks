@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'sorts_mill_goudyregular';
+    src: url('BebasNeue-webfont.eot');
+    src: url('../fonts/goudystm-webfont.eot?') format('embedded-opentype'),
+    url('../fonts/goudystm-webfont.woff') format('woff'),
+    url('../fonts/goudystm-webfont.ttf') format('truetype'),
+    url('../fonts/goudystm-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('../fonts/BebasNeue-webfont.eot');
+    src: url('../fonts/BebasNeue-webfont.eot?') format('embedded-opentype'),
+    url('../fonts/BebasNeue-webfont.woff') format('woff'),
+    url('../fonts/BebasNeue-webfont.ttf') format('truetype'),
+    url('../fonts/BebasNeue-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'sorts_mill_goudyregular', Helvetica, Arial, Sans;
+    font-size: 16px;
+    background-color: #FFF;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 42px;
+    margin: 10px 0;
+    font-weight: normal;
+    color: #0D8FDB;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px 0 6px 0;
+    line-height: 1.2em;
+}
+
+.wrap .title1, .wrap .title2, .wrap .title3 {
+    font-family: "BebasNeueRegular", "Lucida Console", Monaco, monospace;
+    font-size: 36px;
+    font-weight: normal;
+    color: #00DFB3;
+    text-transform: uppercase;
+}
+
+.wrap .title2 {
+    color: #000000;
+    line-height: 0.5;
+    margin-bottom: 20px;
+}
+
+.wrap .title3 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.image-row {
+    margin-bottom: 20px;
+}
+
+.stepimage {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+#partnersgroup {
+    border-top: 1px solid #000;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.partnersgroup-title {
+    background-color: #000;
+    color: #fff;
+    padding: 2px 8px 0 8px;
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#header ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+p {
+    display: inline;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.paragraph {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin: 12px 0 12px 22px;
+}
+
+.wrap {
+    background-color: #FFF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover, a:focus, a:active, #mainnav a:hover {
+    color: #0D8FDB;
+}
+
+#mainnav {
+    float: right;
+    margin: 24px 50px 20px 0;
+}
+
+#mainnav a {
+    color: #000;
+    text-decoration: none;
+}
+
+#partners {
+    background-color: #EDEDED;
+}
+
+#footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0 50px 0;
+    font-size: 14px;
+}
+
+#footer .container div div {
+    padding-top: 16px;
+}
+
+#footer a, #footer a:focus, #footer a:active, #footer a:visited {
+    color: #00DFB3;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #fff;
+}
+
+#header {
+    padding: 20px;
+    background-color: #fff;
+    height: 200px;
+    border-bottom: 4px solid #000;
+    margin-bottom: 40px;
+}
+
+#initiative-logo {
+    position: relative;
+    left: -20px;
+    z-index: 0;
+}
+
+#initiative-tagline {
+    position: relative;
+    top: 164px;
+    left: 120px;
+    font-size: 18px;
+    display: block;
+    background-color: #fff;
+    font-weight: normal;
+    z-index: 1;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 300px;
+}
+
+a.globaleaksbtn {
+    font-family: "BebasNeueRegular", "Lucida Console", Monaco, monospace;
+    display: inline-block;
+    font-weight: normal;
+    color: #00DFB3;
+    background-color: #000;
+    font-size: 42px;
+    padding: 16px 20px 10px 20px;
+    margin-top: 4px;
+    text-decoration: none;
+}
+
+a.globaleaksbtn:hover {
+    color: #fff;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.answer {
+    margin-bottom: 20px;
+}
+
+.sectitle {
+    font-weight: bold;
+}
+
+.secparagraph {
+    margin-bottom: 20px;
+}
+
+#pagetitle {
+    font-family: "BebasNeueRegular", "Lucida Console", Monaco, monospace;
+    font-size: 40px;
+    color: #00DFB3;
+}
+
+.twitter {
+    font-family: "BebasNeueRegular", "Lucida Console", Monaco, monospace;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#footer div {
+    line-height: 0.5;
+}
