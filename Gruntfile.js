@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   'use strict';
 
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  var proj = 'publeaks';
 
   var lang = grunt.option('language');
   if (lang == undefined || lang == '') {
@@ -69,14 +69,13 @@ module.exports = function(grunt) {
       antani: {
         src: [ 'build/*.html'],
         dest: localized_build,
-        replacements: [{
-          from: 'RED',
-          to: 'GREEN'
-        }]
+        replacements: []
       }
     }
 
   });
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('cleanupWorkingDirectory', function() {
 
@@ -92,12 +91,6 @@ module.exports = function(grunt) {
       fs.rmdirSync(dir);
     };
 
-    grunt.file.mkdir('build/');
-
-    grunt.file.recurse('tmp', function(absdir, rootdir, subdir, filename) {
-      grunt.file.copy(absdir, path.join('build/', subdir || '', filename || ''));
-    });
-
     rm_rf('tmp');
     rm_rf('build');
 
@@ -112,13 +105,18 @@ module.exports = function(grunt) {
 
     var replacements = [];
 
+    grunt.file.mkdir('build/');
+
+    grunt.file.recurse('tmp', function(absdir, rootdir, subdir, filename) {
+      grunt.file.copy(absdir, path.join('build/', subdir || '', filename || ''));
+    });
+
     fetchTxTranslations(function(supported_languages){
 
       gt.addTextdomain("en", fileContents);
       strings = gt.listKeys("en", "");
 
       if (lang in supported_languages) {
-
         gt.addTextdomain(lang, fs.readFileSync("pot/" + lang + ".po"));
 
         strings.forEach(function(string){
@@ -146,10 +144,12 @@ module.exports = function(grunt) {
           grunt.file.copy(absdir, path.join(localized_build, subdir || '', filename || ''));
         });
 
-        grunt.task.run('replace');
+        console.log('Written ' + lang + 'template inside build_' + lang + ' directory.');
 
         done();
 
+      } else {
+        console.log('Cannot write ' + lang + 'template; missing translation.');
       }
 
     });
@@ -191,11 +191,11 @@ module.exports = function(grunt) {
   }
 
   var agent = superagent.agent(),
-    baseurl = 'http://www.transifex.com/api/2/project/publeaks',
+    baseurl = 'http://www.transifex.com/api/2/project/' + proj,
     sourceFile = 'pot/en.po';
 
   function fetchTxSource(cb){
-    var url = baseurl + '/resource/publeaks/content',
+    var url = baseurl + '/resource/' + proj + '/content',
       login = readTransifexrc();
 
     agent.get(url)
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
   }
 
   function updateTxSource(cb){
-    var url = baseurl + '/resource/publeaks/content/',
+    var url = baseurl + '/resource/' + proj + '/content/',
       content = grunt.file.read(sourceFile),
       login = readTransifexrc();
 
@@ -224,7 +224,7 @@ module.exports = function(grunt) {
   }
 
   function listLanguages(cb){
-    var url = baseurl + '/resource/publeaks/?details',
+    var url = baseurl + '/resource/' + proj + '/?details',
       login = readTransifexrc();
 
     agent.get(url)
@@ -237,7 +237,7 @@ module.exports = function(grunt) {
   }
 
   function fetchTxTranslationsForLanguage(langCode, cb) {
-    var resourceUrl = baseurl + '/resource/publeaks/',
+    var resourceUrl = baseurl + '/resource/' + proj + '/',
       login = readTransifexrc();
 
     agent.get(resourceUrl + 'stats/' + langCode + '/')
