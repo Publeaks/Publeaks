@@ -9,6 +9,22 @@ More information can be found at:
 - [Publeaks Website](https://www.publeaks.org)
 - [GlobaLeaks Website](https://www.globaleaks.org)
 
+# How does this package work?
+
+Install dependencies with:
+  npm install -d
+
+Build en version with:
+  grunt build
+
+Build localized version with:
+  grunt build --language langcode
+
+  e.g.: grunt build --language fr
+
+Result of the build can be found in directories build_langcode
+  e.g.: fr build will be in build_fr directory
+
 ## License
 Copyright (C) 2014 Hermes No Profit Association - GlobaLeaks Project
 
