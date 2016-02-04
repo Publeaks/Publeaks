@@ -1,6 +1,6 @@
 # Publeaks
 
-This projects serves as a skeleton for the informative website of [Publeaks](https://www.publeaks.org) like initatives based [GlobaLeaks](https://www.globaleaks.org).
+This projects serves as a skeleton for the informative website of [Publeaks](https://www.publeaks.nl) like initatives based [GlobaLeaks](https://www.globaleaks.org).
 
 The project is internationalized in multiple languages thanks to [Transifex](https://www.transifex.com/projects/p/publeaks/).
 - https://www.transifex.com/projects/p/publeaks/
