@@ -1,4 +1,4 @@
-
+#!/bin/sh
 files=`find -iname '*.png' -o -iname '*.jpg' -o -iname '*.gif'`
 for i in $files; do
     filename=${i%.*}
